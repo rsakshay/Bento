@@ -1,0 +1,17 @@
+# Unreal Engine Folders
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# User settings
+*.suo
+*.user
+*.sln
+*.log
+*.vs
+.vscode/
+
+# Mac-specific
+.DS_Store
