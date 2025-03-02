@@ -15,27 +15,25 @@ class BENTO_API UBentoItemData : public UPrimaryDataAsset
 
 public:
 	// Unique identifier for the item
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Item")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Bento|Item")
 	FName ItemId = NAME_None;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Item")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Bento|Item")
 	FText ItemName;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (Bitmask, BitmaskEnum = "EBentoItemType"), Category = "Item")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (Bitmask, BitmaskEnum = "EBentoItemType"), Category = "Bento|Item")
 	int32 ItemType = static_cast<int32>(EBentoItemType::None);
 
-	/** Whether the item has an unlimited stack size */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Item")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Bento|Item")
 	bool bUnlimitedStack = false;
 
-	/** Maximum stack size (Hidden if bUnlimitedStack is true) */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Item", meta = (EditCondition = "!bUnlimitedStack", ClampMin = 1))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Bento|Item", meta = (EditCondition = "!bUnlimitedStack", ClampMin = 1))
 	int32 MaxStackSize = 1;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Item")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Bento|Item")
 	TObjectPtr<UTexture2D> ItemIcon = nullptr;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Item")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Bento|Item")
 	FText ItemDescription;
 
 	virtual FPrimaryAssetId GetPrimaryAssetId() const override
